@@ -33,7 +33,7 @@ def isUserExists(username:str)->bool:
 
 def addUser(name, pwd)->str:
     conn = create_connection("mydatabase.db")
-    sql = f"INSERTZ INTO users (name, age) VALUES('{name}', 22)"
+    sql = f"INSERT INTO users (name, age) VALUES('{name}', 22)"
     cursor = conn.cursor()
     try:
         cursor.execute(sql)
