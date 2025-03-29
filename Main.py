@@ -37,12 +37,13 @@ def addUser(name, pwd)->str:
     cursor = conn.cursor()
     try:
         cursor.execute(sql)
-        msg = "Regisztráció sikeres!"
+        conn.commit()
+        message = "Regisztráció sikeres!"
     except Error as e:
-        msg = "Jaj valami hiba történt: " + str(e)
+        message = "Jaj valami hiba történt: " + str(e)
 
     conn.close()
-    return msg
+    return message
 
 
 
